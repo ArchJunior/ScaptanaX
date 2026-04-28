@@ -15,7 +15,7 @@ Features:
   - Risk Score Calculation
 
 GitHub: https://github.com/ArchJunior
-License: MIT — Use only on authorized systems.
+License: All Rights Reserved — Unauthorized use is prohibited.
 """
 
 import socket
