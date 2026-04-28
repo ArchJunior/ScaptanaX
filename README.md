@@ -1,5 +1,3 @@
 # ScaptanaX
 
-**Only those who require permission can use it.**
-
-Made by **ArchJúnior**
+**The responsibility is entirely yours.**
