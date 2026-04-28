@@ -310,7 +310,7 @@ def query_nvd_cve(service_name: str, version: str, max_results: int = 5) -> list
     }
 
     url = f"{NVD_API_BASE}?{urllib.parse.urlencode(params)}"
-    headers = {"User-Agent": "Scaptanax"}
+    headers = {"User-Agent": "ScaptanaX"}
 
     api_key = os.environ.get("NVD_API_KEY", "")
     if api_key:
@@ -476,7 +476,7 @@ def analyze_http_headers(target_ip: str, port: int, timeout: float = 4.0) -> dic
     try:
         header_section = response.decode(errors='ignore').split("\r\n\r\n")[0]
         raw_headers = {}
-        for line in header_section.split("\r\n")[1:]:  # First line is HTTP/1.1 200 OK
+        for line in header_section.split("\r\n")[1:]:
             if ":" in line:
                 key, _, val = line.partition(":")
                 raw_headers[key.strip()] = val.strip()
@@ -1197,7 +1197,7 @@ def save_html_report(
 
     context = {
         "meta": {
-            "tool":       "Scaptanax v3",
+            "tool":       "ScaptanaX",
             "target":     target_ip,
             "timestamp":  timestamp,
             "risk_level": risk_level,
@@ -1240,7 +1240,7 @@ def save_report(
         if output_format == "json":
             report = {
                 "meta": {
-                    "tool":       "Scaptanax v3",
+                    "tool":       "ScaptanaX",
                     "target":     target_ip,
                     "timestamp":  timestamp,
                     "risk_level": risk_level,
@@ -1461,7 +1461,7 @@ def port_scanner(args: argparse.Namespace) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Scaptanax — Advanced Port Scanner & Security Analysis Tool",
+        description="ScaptanaX",
         formatter_class=argparse.RawTextHelpFormatter,
         epilog=(
             "Examples:\n"
