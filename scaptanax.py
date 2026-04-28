@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-Scaptanax
-Advanced Port Scanner & Security Analysis Tool
+ScaptanaX
 
 Features:
   - TCP Connect & SYN Stealth Scan
@@ -14,7 +13,6 @@ Features:
   - OS Fingerprinting
   - Risk Score Calculation
 
-GitHub: https://github.com/ArchJunior
 License: All Rights Reserved — Unauthorized use is prohibited.
 """
 
@@ -312,7 +310,7 @@ def query_nvd_cve(service_name: str, version: str, max_results: int = 5) -> list
     }
 
     url = f"{NVD_API_BASE}?{urllib.parse.urlencode(params)}"
-    headers = {"User-Agent": "Scaptanax (Security Scanner)"}
+    headers = {"User-Agent": "Scaptanax"}
 
     api_key = os.environ.get("NVD_API_KEY", "")
     if api_key:
@@ -710,7 +708,6 @@ def tcp_connect_scan(target_ip: str, port: int, timeout: float = 1.0,
             service = PORT_SERVICES.get(port, "Unknown")
             banner  = banner_grab(target_ip, port, timeout)
 
-            # If no banner was received and in aggressive mode, try aggressive enumeration
             if aggressive and banner in ("No Banner", "Unknown"):
                 banner = aggressive_service_enum(target_ip, port, timeout)
 
@@ -1163,7 +1160,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </div>
 
 <div class="footer">
-  Scaptanax v3 — ArchJúnior Edition &nbsp;|&nbsp;
+  ScaptanaX &nbsp;|&nbsp;
   Use only on authorized systems &nbsp;|&nbsp;
   {{ meta.timestamp }}
 </div>
@@ -1387,7 +1384,7 @@ def scan_single_target(
 
 def port_scanner(args: argparse.Namespace) -> None:
     print(Fore.CYAN + BANNER)
-    print(Fore.RED  + "Scaptanax v3 — ArchJúnior Edition\n")
+    print(Fore.RED  + "ScaptanaX\n")
 
     if not SCAPY_AVAILABLE:
         print(Fore.YELLOW + "[!] scapy not found — SYN scan and OS fingerprint disabled.")
