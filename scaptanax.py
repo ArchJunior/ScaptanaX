@@ -13,7 +13,7 @@ Features:
   - OS Fingerprinting
   - Risk Score Calculation
 
-License: All Rights Reserved — Unauthorized use is prohibited.
+License: License: MIT — see LICENSE file for details.
 """
 
 import socket
