@@ -30,10 +30,29 @@ Scanning a target is only the first step — figuring out what those open ports 
 
 ## Installation
 
+**Option 1 — quick install (recommended):**
+
+```bash
+git clone https://github.com/ArchJunior/ScaptanaX.git
+cd ScaptanaX
+bash install.sh
+```
+
+This checks your Python version, installs the required dependencies, and installs `scaptanax` as a global command so you can run it from anywhere.
+
+To uninstall:
+
+```bash
+bash install.sh --uninstall
+```
+
+**Option 2 — manual:**
+
 ```bash
 git clone https://github.com/ArchJunior/ScaptanaX.git
 cd ScaptanaX
 pip install colorama tqdm tabulate jinja2 scapy
+python scaptanax.py -t <target>
 ```
 
 > `scapy` is optional — without it, SYN scan and OS fingerprinting automatically fall back to TCP Connect, so the tool still works.
